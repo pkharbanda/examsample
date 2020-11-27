@@ -76,7 +76,7 @@ def csvwriter():
 #####################################################################################################################
 #######Uncomment the below line post mometrix url is scrubbed. to clean it manually. This code will removed when pipedelimited is installed.
 
-def manualupdateremovecomma():
+def cleancsvfunction():
     entries = []
     dup_entries =[]
     #with open('mometrixrecordretriver11-26-2020.csv', 'r') as examsampleread:
@@ -101,3 +101,15 @@ def manualupdateremovecomma():
                         if (len(array[2])) == 1 and array[3] in dup_entries:
                             print('Duplicate entries\n', row)
 
+
+            except IndexError:
+                print ('#############################################################################################################')
+                print('Structure not proper. Please check the row \n' + row)
+                print ('#############################################################################################################')
+
+
+        print(i)
+        print (dup_entries)
+
+cleancsvfunction()
+#######################################################################################################################
